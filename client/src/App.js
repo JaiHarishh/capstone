@@ -8,7 +8,7 @@ function App() {
     edit: "# Markdown 123",
   });
 
-  const backendURL = 'http://localhost:8080';
+  const backendURL = 'https://capstonemarkdown.netlify.app/';
 
   useEffect(() => {
     async function fetchData() {
