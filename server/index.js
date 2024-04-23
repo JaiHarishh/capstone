@@ -10,6 +10,14 @@ app.use(express.json());
 const connectionString = 'mongodb://crudops:crudops@ac-yx5tdxg-shard-00-00.r5gwhul.mongodb.net:27017,ac-yx5tdxg-shard-00-01.r5gwhul.mongodb.net:27017,ac-yx5tdxg-shard-00-02.r5gwhul.mongodb.net:27017/?ssl=true&replicaSet=atlas-8u30ch-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0';
 
 
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
+
 
 const PORT = process.env.PORT || 8080;
 
