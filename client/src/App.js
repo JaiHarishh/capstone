@@ -41,6 +41,15 @@ function App() {
     }
   }
 
+  const downloadFile = () => {
+    const blob = new Blob([markdown.edit], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'markdown.txt';
+    link.click();
+  };
+
   return (
     <main>
       <section className="markdown">
@@ -50,6 +59,7 @@ function App() {
           onChange={(e) => setMarkdown({ edit: e.target.value })}
         ></textarea>
         <button onClick={updateDB}>Update DB</button>
+        <button onClick={downloadFile}>Download File</button>
 
         <article className="result">
           <ReactMarkdown>{markdown.edit}</ReactMarkdown>
